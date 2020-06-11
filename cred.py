@@ -108,7 +108,8 @@ def _append_cred(intel_hex, sec_tag, cred_type, content):
     # [uint32_t nrf_sec_tag_t]
     intel_hex.puts(addr, struct.pack('I', sec_tag))
     addr = addr + 4
-    # [uint8_t nrf_key_mgnt_cred_type_t]
+    # [uint8_t modem_key_mgnt_cred_type]
+    # This is really and enum, but we treat it as 1 byte here
     intel_hex[addr] = cred_type
     addr = addr + 1
     # [uin16_t len]
