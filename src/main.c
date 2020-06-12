@@ -103,7 +103,6 @@ static bool write_imei(char* buf) {
   return true;
 }
 
-//static int delete_and_write_credentials(nrf_se)
 static int parse_and_write_credential(u32_t* addr) {
   int ret;
 
@@ -119,7 +118,7 @@ static int parse_and_write_credential(u32_t* addr) {
   ret = modem_key_mgmt_delete(sec_tag, cred_type);
   if (ret < 0) {
     // It's normal when applying credentials for first time
-    //printk("No previous credetial found\n");
+    printk("No previous credetial found\n");
   }
   ret = modem_key_mgmt_write(sec_tag, cred_type, (u8_t*)*addr, len);
   *addr += len;
