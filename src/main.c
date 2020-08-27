@@ -23,9 +23,9 @@
  *  [u32_t nrf_sec_tag_t][u8_t nrf_key_mgnt_cred_type_t][u16_t len][char[] credential]
  */
 
-#include <at_cmd.h>
 #include <drivers/uart.h>
-#include <modem_key_mgmt.h>
+#include <modem/at_cmd.h>
+#include <modem/modem_key_mgmt.h>
 #include <nrfx_nvmc.h>
 #include <stdio.h>
 #include <string.h>
